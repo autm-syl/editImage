@@ -1,0 +1,17 @@
+PODS:
+  - iOSPhotoEditor (0.5)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
+
+DEPENDENCIES:
+  - iOSPhotoEditor
+  - SDWebImage (~> 4.0)
+
+SPEC CHECKSUMS:
+  iOSPhotoEditor: 0ddc84bcef9fe73fe8cc45ac999b89e0aa207aea
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+
+PODFILE CHECKSUM: 6999b5a9257e4b1df114c4a7e23fbe879ddfd4c1
+
+COCOAPODS: 1.3.1
