@@ -8,13 +8,16 @@
 
 import UIKit
 import SDWebImage
-import iOSPhotoEditor
+//import PhotoEditorViewController
 
-class EditController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, PhotoEditorDelegate {
+class CreateController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, PhotoEditorDelegate {
 	// MARK: - PhotoEditorDelegate
+	
+	var stringImg:String {get;set};
+	
 	func doneEditing(image: UIImage) {
 		let degsignDoneImage = UIImageView(frame:designImage.bounds);
-		degsignDoneImage.image = image;
+		degsignDoneImage.image = image;l
 		designImage.addSubview(degsignDoneImage);
 	}
 	
@@ -52,9 +55,9 @@ class EditController: UIViewController,UICollectionViewDelegate, UICollectionVie
 	var tapShowEdit:UITapGestureRecognizer!
 	
 	
-	class func create() -> EditController {
+	class func create() -> CreateController {
 		let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-		return mainStoryboard.instantiateViewController(withIdentifier: String(describing: self)) as! EditController
+		return mainStoryboard.instantiateViewController(withIdentifier: String(describing: self)) as! CreateController
 	}
 	
 	override func viewDidLoad() {
@@ -115,5 +118,10 @@ class EditController: UIViewController,UICollectionViewDelegate, UICollectionVie
 		
 		present(photoEditor, animated: true, completion: nil)
 	}
-
+	
+	
+	// MARK - public function
+	public func createWithImage:(_img:String){
+		print(img);
+	}
 }

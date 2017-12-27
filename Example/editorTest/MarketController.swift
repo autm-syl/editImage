@@ -9,8 +9,15 @@
 import UIKit
 //import iOSPhotoEditor
 
+
+protocol MarketDelegate {
+	func createWithdata();
+}
+
 class MarketController: UIViewController {
-    
+	
+	weak var delegate:MarketDelegate?
+	public var imgString;
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -23,9 +30,11 @@ class MarketController: UIViewController {
 //        picker.sourceType = .photoLibrary
 //        present(picker, animated: true, completion: nil)
 		
-		let editView = EditController.create();
+		//let editView = CreateController.create();
 //		self.navigationController?.addChildViewController(editView);
-		present(editView, animated: true, completion: nil);
+		//present(editView, animated: true, completion: nil);
+		imgString = "ahihi"
+		delegate?.createWithdata();
     }
 }
 
