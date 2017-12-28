@@ -8,21 +8,17 @@
 
 import UIKit
 
-class MainTabBarControls: UITabBarController, MarketDelegate {
+class MainTabBarControls: UITabBarController {
 	func createWithdata() {
 		
 		self.tabBarController?.selectedIndex = 2;
-		viewEdit.createWithImage(viewMarket.imgString);
 	}
 	
-	var freshApp = true;
-	var viewEdit:CreateController! = nil;
-	var viewMarket:MarketController! = nil;
-	
+	var freshApp = true;	
 	
 	override func viewWillAppear(_ animated: Bool) {
 		if freshApp == true {
-			!freshApp;
+			freshApp = false;
 			self.tabBarController?.selectedIndex = 0;
 		}
 	}
@@ -31,8 +27,7 @@ class MainTabBarControls: UITabBarController, MarketDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-		viewMarket = self.viewControllers![0] as! MarketController;
-		viewEdit = self.viewControllers![2] as! CreateController;
+
     }
 
     override func didReceiveMemoryWarning() {

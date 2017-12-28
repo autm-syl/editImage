@@ -51,6 +51,8 @@
 		9E75AC6E1FF2D65A008C320C /* UIImageView+Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75AC4B1FF2D65A008C320C /* UIImageView+Alpha.swift */; };
 		9E75AC6F1FF2D65A008C320C /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75AC4C1FF2D65A008C320C /* UIView+Image.swift */; };
 		9E75AC711FF2DD84008C320C /* MainTabBarControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75AC701FF2DD84008C320C /* MainTabBarControls.swift */; };
+		9E75AC821FF579A8008C320C /* TimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75AC811FF579A8008C320C /* TimelineController.swift */; };
+		9E75AC841FF579BF008C320C /* MypageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E75AC831FF579BF008C320C /* MypageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +102,8 @@
 		9E75AC4B1FF2D65A008C320C /* UIImageView+Alpha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Alpha.swift"; sourceTree = "<group>"; };
 		9E75AC4C1FF2D65A008C320C /* UIView+Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Image.swift"; sourceTree = "<group>"; };
 		9E75AC701FF2DD84008C320C /* MainTabBarControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarControls.swift; sourceTree = "<group>"; };
+		9E75AC811FF579A8008C320C /* TimelineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineController.swift; sourceTree = "<group>"; };
+		9E75AC831FF579BF008C320C /* MypageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageController.swift; sourceTree = "<group>"; };
 		9EEB4D5FF7C66761863E5E50 /* Pods-editorTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editorTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-editorTest/Pods-editorTest.release.xcconfig"; sourceTree = "<group>"; };
 		F2FE6D2857E80A528393FDF8 /* Pods-editorTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-editorTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-editorTest/Pods-editorTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,7 +145,10 @@
 				05D951D41EBB868F00DC2299 /* AppDelegate.swift */,
 				05D951D61EBB868F00DC2299 /* MarketController.swift */,
 				9E75AB2F1FF00A32008C320C /* CreateController.swift */,
+				9E75AC811FF579A8008C320C /* TimelineController.swift */,
+				9E75AC831FF579BF008C320C /* MypageController.swift */,
 				9E75AC701FF2DD84008C320C /* MainTabBarControls.swift */,
+				9E75AC851FF58090008C320C /* SubView */,
 				058A26061EBC5448007256A1 /* img.jpg */,
 				05D951D81EBB868F00DC2299 /* Main.storyboard */,
 				05D951DB1EBB868F00DC2299 /* Assets.xcassets */,
@@ -216,6 +223,13 @@
 				9E75AC461FF2D65A008C320C /* StickersViewController.xib */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		9E75AC851FF58090008C320C /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +384,7 @@
 				9E75AC541FF2D65A008C320C /* GradientView.swift in Sources */,
 				9E75AC591FF2D65A008C320C /* PhotoEditor+Gestures.swift in Sources */,
 				9E75AC6E1FF2D65A008C320C /* UIImageView+Alpha.swift in Sources */,
+				9E75AC841FF579BF008C320C /* MypageController.swift in Sources */,
 				9E75AC6C1FF2D65A008C320C /* UIImage+Crop.swift in Sources */,
 				9E75AC4E1FF2D65A008C320C /* ColorsCollectionViewDelegate.swift in Sources */,
 				9E75AC561FF2D65A008C320C /* PhotoEditor+Crop.swift in Sources */,
@@ -383,6 +398,7 @@
 				9E75AC5D1FF2D65A008C320C /* PhotoEditorViewController.swift in Sources */,
 				9E75AC521FF2D65A008C320C /* EmojiCollectionViewCell.swift in Sources */,
 				9E75AC551FF2D65A008C320C /* PhotoEditor+Controls.swift in Sources */,
+				9E75AC821FF579A8008C320C /* TimelineController.swift in Sources */,
 				9E75AC531FF2D65A008C320C /* EmojisCollectionViewDelegate.swift in Sources */,
 				9E75AC6F1FF2D65A008C320C /* UIView+Image.swift in Sources */,
 				05D951D51EBB868F00DC2299 /* AppDelegate.swift in Sources */,

@@ -1,43 +1,45 @@
 //
-//  ViewController.swift
+//  TimelineController.swift
 //  editorTest
 //
-//  Created by Mohamed Hamed on 5/4/17.
+//  Created by Le Cuong on 12/29/17.
 //  Copyright © 2017 Mohamed Hamed. All rights reserved.
 //
 
 import UIKit
 import WebKit
-//import iOSPhotoEditor
 
-
-class MarketController: UIViewController, UITextFieldDelegate {
+class TimelineController: UIViewController, UITextFieldDelegate {
 
 	//////
-	@IBOutlet weak var ContainerWebview: UIView!
+	@IBOutlet weak var containerWebview: UIView!
 	@IBOutlet weak var refreshBtn: UIButton!
-	@IBOutlet weak var linkTextfield: UITextField!
+	@IBOutlet weak var linkContent: UITextField!
 	
 	//////
 	var webView:WKWebView!
 	var currentLink:String!
 	
-    override func viewDidLoad() {
-		super.viewDidLoad();
-		linkTextfield.delegate = self;
-		
+	override func viewDidLoad() {
+        super.viewDidLoad()
+		linkContent.delegate = self;
 		//setting webview
 		self.settingWebView();
     }
-	
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		linkTextfield.endEditing(true);
+		linkContent.endEditing(true);
 		return true;
 	}
-	
+
 	func settingWebView (){
 		// get link
-		currentLink = linkTextfield.text;
+		currentLink = linkContent.text;
 		
 		//set config webview
 		let source = "var meta = document.createElement('meta');meta.name = 'viewport';meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';var head = document.getElementsByTagName('head')[0];head.appendChild(meta);";
@@ -53,7 +55,7 @@ class MarketController: UIViewController, UITextFieldDelegate {
 		// init & load webview
 		let url = NSURL.init(string: currentLink);
 		let request = NSURLRequest.init(url: url! as URL);
-		webView = WKWebView.init(frame: ContainerWebview.bounds, configuration:configuration);
+		webView = WKWebView.init(frame: containerWebview.bounds, configuration:configuration);
 		webView.navigationDelegate = self;
 		webView.uiDelegate = self;
 		webView.translatesAutoresizingMaskIntoConstraints = true;
@@ -62,10 +64,9 @@ class MarketController: UIViewController, UITextFieldDelegate {
 		webView.scrollView.bounces = true;
 		webView.scrollView.bouncesZoom = true;
 		webView.load(request as URLRequest);
-		ContainerWebview.addSubview(webView);
+		containerWebview.addSubview(webView);
 	}
-	
-	//MARK - Handle action
+    
 	@IBAction func refreshBtnClicked(_ sender: Any) {
 		if ((webView) != nil){
 			webView.reload();
@@ -73,8 +74,7 @@ class MarketController: UIViewController, UITextFieldDelegate {
 	}
 }
 
-
-extension MarketController:WKNavigationDelegate {
+extension TimelineController:WKNavigationDelegate {
 	func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
 		print(error.localizedDescription);
 	}
@@ -88,12 +88,11 @@ extension MarketController:WKNavigationDelegate {
 	}
 }
 
-extension MarketController:WKScriptMessageHandler{
+extension TimelineController:WKScriptMessageHandler{
 	func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
 		//
 	}
 }
-extension MarketController:WKUIDelegate{
-
+extension TimelineController:WKUIDelegate{
+	
 }
-

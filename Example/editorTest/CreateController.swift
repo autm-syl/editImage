@@ -13,11 +13,11 @@ import SDWebImage
 class CreateController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, PhotoEditorDelegate {
 	// MARK: - PhotoEditorDelegate
 	
-	var stringImg:String {get;set};
+	var stringImg:String!;
 	
 	func doneEditing(image: UIImage) {
 		let degsignDoneImage = UIImageView(frame:designImage.bounds);
-		degsignDoneImage.image = image;l
+		degsignDoneImage.image = image;
 		designImage.addSubview(degsignDoneImage);
 	}
 	
@@ -121,7 +121,7 @@ class CreateController: UIViewController,UICollectionViewDelegate, UICollectionV
 	
 	
 	// MARK - public function
-	public func createWithImage:(_img:String){
-		print(img);
+	public func createWithImage(_img:String){
+		print(_img);
 	}
 }
